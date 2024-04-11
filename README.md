@@ -35,7 +35,7 @@ Output:
 
 **You have successfully executed your first Rust program.**
 
-There is one more way of executing your rust program other than first compiling it using `rustc` and then running the executable created.
+There is one more way of running and managing your rust project other than first compiling it using `rustc` and then running the executable created.
 ### Cargo
 
 Cargo is Rust’s build system and package manager.  
@@ -48,9 +48,9 @@ Output:
 `cargo 1.77.2 (e52e36006 2024-03-26)`  
 
 #### Creating a new cargo project
-`cargo new guessing_game`
+`cargo new hello_cargo`
 
-This command creates a project named *guessing_game*.  
+This command creates a project named *hello_cargo*.  
 
 Inside the project there is a **Cargo.toml** file containing the project information and all the dependencies we want to use will be added here only.  
 *TOML stands for Tom’s Obvious, Minimal Language*
@@ -63,12 +63,12 @@ Running a cargo project includes two steps:
 1. ***Building the project***  
 run the following command to build  
 `cargo build`  
-this command compiles the code and creates a **target** folder, containing the executable of our code at *target/debug/guessing_game* (in place of guessing game it would be the name you gave to your project).
+this command compiles the code and creates a **target** folder, containing the executable of our code at *target/debug/hello_cargo* (in place of guessing game it would be the name you gave to your project).
 
 2. ***Running the target***  
 now we can run the executable file created after building the code.  
 enter this command to run the executable:  
-`./target/debug/guessing_game`  
+`./target/debug/hello_cargo`  
 
 We can avoid the hassle of first building the code and then running if by using  
 `cargo run`  
