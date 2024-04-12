@@ -204,3 +204,46 @@ let b: bool = true;
 let c: char = 'Z';
 ```
 The above code create a immutable `char` variable `c` holding the value `'Z'`
+
+### Compound Types
+
+*Compound Types* can group multiple types into one data type.  
+Rust has mainly two **Compound Data Types**
+- Tuples
+- Arrays
+
+#### Tuples
+- A Tuple is used to group two or more **values** and/or **data types** together
+- Tuples have fixed lengh i.e., they cannot grow or shrink in size
+- Tuples are indexed
+
+How to declare a tuple
+```rust
+let mut t: (u32, f64, i8) = (432, 24.32, -4);
+```
+The above code binds the *mutable* variable `t` to a tuple holding a `u32`, `f64` and a `i8` **data types** together.
+
+Elements of a **tuple** could be accessed using perios(`.`) operator
+```rust
+println!("{}", t.0);
+```
+The above code prints the **element** at **index** `0`  
+The output is: `432`
+
+#### Arrays
+- Array is a collection of similar **data types**
+- Arrays have a fixed length
+- Arrays are indexed
+
+How to declare an array
+```rust
+let a: [i32; 5] = [1, 2, 3, 4, 5];
+```
+The above code binds the **variable** to a *mutable* **array** holding `i32` data types and of fixed length `5`.
+
+Elements of an **array** could be accessed using square brackets `[ ]`
+```rust
+println!("{}", a[1]);
+```
+The above code prints the **element** at **index** `1`  
+The output is: `2`
