@@ -78,3 +78,129 @@ Apart from **cargo run** and **cargo build** there is one more command
 `cargo check`  
 It only checks if the project is compling successfully without any errors but does not create any executable file.  
 *It is faster than cargo build.*
+
+## Basic Programming Concepts
+
+### Variables
+
+We use the `let` keyword to declare a new variable.  
+- By default a variable is of immutable type.
+
+```rust
+let x = 5;
+```
+the above statement creates a immutable var `x` holding the integer value `5`.  
+
+If you want to declare a **mutable** variable use the `mut` keyword  
+```rust
+let mut x = 5;
+x = 6;
+```
+- The above statement creates a mutable variable `x` holding value `5`
+- Then in the next line changing the value `x` to `6`
+
+If you try to reassign a value to an immutable variable, it will throw an **error**  
+```rust
+let x = 1;
+x = 2;
+```
+Compiler will throw the following error  
+```
+error[E0384]: cannot assign twice to immutable variable `x`
+```
+
+### Constants
+
+- Like **immutable** variables, **constants** are values that are bound to a 
+name and are not allowed to change.
+- **Constants** may be set only to a constant expression, not the result of a value that could only be computed at runtime
+
+For example:
+```rust
+const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
+```
+
+### Scalar Data Types
+
+Scalar data type is a type that holds a single value
+
+#### Integer Types
+
+- Integer is mainly of 6 sizes based on bit length [8, 16, 32, 64, 128] bits
+- and **signed** and **unsigned**
+
+| Length | Signed |          Range        | Unsigned|    Unsigned    |
+|:------:|:------:|:---------------------:|:-------:|:--------------:|
+| 8-bit  |   i8   |        -127 to 128    |    u8   |  0 to 255      |
+| 16-bit |   i16  |    -2^15 -1 to 2^15   |    u16  | 0 to 2^16 -1   |
+| 32-bit |   i32  |    -2^31 -1 to 2^31   |    u16  | 0 to 2^32 -1   |
+| 64-bit |   i64  |    -2^63 -1 to 2^63   |    u16  | 0 to 2^64 -1   |
+| 128-bit|   i128 |   -2^128 -1 to 2^128  |    u128 | 0 to 2^128 -1  |
+|  arch  |   isize|2^isize-1 -1 to 2^isize|    usize| 0 to 2^usize -1|
+
+***NOTE:*** *arch* means the size depends on the CPU architecture i.e., for a 32-bit system size is 32 bits and for a 64-bit system size is 64 bits.
+
+Syntax to define a u32 integer:
+```rust
+let x: u32 = 3424;
+```
+The above code creates a **unsigned 32-bit integer** variable holding value **3424**.
+
+#### Floating-Point Types
+
+- Floats are of two sizes in Rust **32-bit** and **64-bit**
+- By default a floating point is of 64-bit
+
+```rust
+let x = 2.0;
+let y: f32 = 3.0;
+```
+In above code `x` is a **64-bit** float and `y` is a **32-bit** floating point number.
+
+
+#### Numeric Operations
+
+Rust supports many arithmetic operations for integer and floats.
+1. *Addition*
+2. *Subtraction*
+3. *Multiplication*
+4. *Division*
+5. *Modulus*
+
+```rust
+// addition
+let sum = 5 + 10;
+
+// subtraction
+let difference = 95.5 - 4.3;
+
+// multiplication
+let product = 4 * 30;
+
+// division
+let quotient = 56.7 / 32.2;
+let truncated = -5 / 3; // Results in -1
+
+// remainder
+let remainder = 43 % 5;
+```
+
+#### The Boolean Type
+
+A Boolean type in Rust has two possible values
+- `true`
+- `false`
+
+```rust
+let b: bool = true;
+```
+
+#### The Character Type
+
+- char type is of 4-bytes in Rust
+- Therefore, it can store more than just ASCII characters
+
+```rust
+let c: char = 'Z';
+```
+The above code create a immutable `char` variable `c` holding the value `'Z'`
