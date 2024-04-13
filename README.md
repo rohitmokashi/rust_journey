@@ -79,6 +79,8 @@ Apart from **cargo run** and **cargo build** there is one more command
 It only checks if the project is compling successfully without any errors but does not create any executable file.  
 *It is faster than cargo build.*
 
+---
+
 ## Basic Programming Concepts
 
 ### Variables
@@ -205,6 +207,8 @@ let c: char = 'Z';
 ```
 The above code create a immutable `char` variable `c` holding the value `'Z'`
 
+---
+
 ### Compound Types
 
 *Compound Types* can group multiple types into one data type.  
@@ -247,3 +251,131 @@ println!("{}", a[1]);
 ```
 The above code prints the **element** at **index** `1`  
 The output is: `2`
+
+---
+
+### Functions
+
+- Functions are pretty straight forward in Rust.
+- Functions may take some input and may return some output as well.
+
+For example let's make a function for adding two integers.
+```rust
+fn add(x: i32, y: i32) {
+    let result: 32 = x + y;
+    return result;
+}
+```
+Let's break down the above code
+- `fn` : **keyword** used to declare a *function* followed by
+- ***add*** : name of the function
+- `( )` : contain the parameters of the function, in this case two `i32` types namely `x` and `y`
+- `{ }` : curly brackets contain the function body
+
+In the `add` function we add `x` & `y` and store it in `result`  
+Next we can return the `result` using the `return` statement.
+
+***NOTE :***
+- **Statements** are instructions that perform some action and do not return a value.
+- **Expressions** evaluate to a resultant value.
+
+---
+
+### Comments
+
+We use two forward slashes `//` to comment a line.  
+There is no special concept of multi line comment in Rust, if you want to comment more than one line add `//` before every line.  
+
+*Example*
+```rust
+// This is a comment
+// This is another comment
+```
+
+---
+
+## Controling the Flow of code
+
+### Conditional Statements
+
+- Conditional statements are used if you want to execute some piece of code only if a condition is *true*
+-  We use `if` statement for this
+
+```rust
+fn main() {
+    let number = 6;
+
+    if number % 4 == 0 {
+        println!("number is divisible by 4");
+    }
+    else if number % 3 == 0 {
+        println!("number is divisible by 3");
+    }
+    else {
+        println!("number is not divisible by 4 or 3");
+    }
+}
+```
+
+- We first write `if` statement followed by condition we want to check in this case `number % 4`
+- If this condition is `false` the code jumps to `else if` conditions
+- and if all the conditions are `false` the `else` statement is **executed**
+
+### Loops
+
+There are three types of *loops* in Rust
+1. infinite loop
+2. while loop
+3. for loop
+
+#### Infinte Loop
+
+We create a *infinite loop* by using the `loop` keyword followed by the loop body, the statements to be executed repeatedly.
+```rust
+fn main() {
+    let mut i = 10;
+    loop {
+        if i==0 {
+            break;
+        }
+        i -= 1;
+    }
+}
+```
+***NOTE :*** Make sure to add a `break` statement inside `loop` or the code will go into **infinte loop**
+
+#### While Loop
+
+`while` loop is used when we want to run a set of statements until a condition holds **true**
+
+```rust
+fn main() {
+    let mut i = 0;
+
+    while i < 5 {
+        println!("{}", i);
+        i += 1;
+    }
+}
+```
+The above code prints numbers from 0 to 4.  
+
+First we write `while` statement followed by the *condition* `i<5` and loop body in *curly braces* `{ }`
+
+#### For loop
+
+For loop is used when you know exactly how many times you want to execute the loop body.
+
+```rust
+fn main() {
+    for num in 1..=7 {
+        println!("Number: {}", num);
+    }
+}
+```
+The above code prints numbers from **1** to **6** as *output*.  
+Let's break down the code  
+1. we write `for` statement
+2. next the *variable* we want to bind the loop values to, in this case `num`
+3. `in` statement and 
+4. **values range** *starting value* followed by two period operators (`..`) and *exclusive endling value*
