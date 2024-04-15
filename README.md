@@ -379,3 +379,31 @@ Let's break down the code
 2. next the *variable* we want to bind the loop values to, in this case `num`
 3. `in` statement and 
 4. **values range** *starting value* followed by two period operators (`..`) and *exclusive endling value*
+
+## Structs
+
+Structs are simply collection of different *data types* and *named variables* and using it as one **data type**
+
+**Structs** are very similar to tuples
+```rust
+let a: (bool, String, u8);
+```
+But the only difference is elements inside a **Struct** are named
+```rust
+struct User {
+    active: bool,
+    name: String,
+    age: u8
+}
+```
+elements of a `struct` can be accessed using structure name followed by variable
+```rust
+let u1 = User {
+    active: true,
+    name: String::from("Rohit Mokashi"),
+    age: 20
+}
+
+println!("{}", u1.name);
+```
+The above code will print the name from **struct** `u1`, Hence **Rohit Mokashi**
